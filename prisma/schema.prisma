@@ -7,10 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Todos {
-  id    String @id @default(cuid())
-  title String
-  status Status @default(TODO)
+model Task {
+  id         String   @id @default(cuid())
+  title      String
+  status     Status   @default(TODO)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 enum Status {

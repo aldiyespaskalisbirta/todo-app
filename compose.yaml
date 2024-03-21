@@ -17,6 +17,9 @@ services:
         - path: .
           target: /app
           action: sync
+    environment:
+      - DATABASE_URL=postgresql://iyesss:aldiyes17032002@db:5432/todo?schema=public
+      - DEV_APP_DOMAIN=http://localhost:3000
   db:
     image: postgres
     ports:
